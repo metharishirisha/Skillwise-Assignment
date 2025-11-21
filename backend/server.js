@@ -76,6 +76,26 @@ const handleDbError = (err, res) => {
 
 // ==================== API ROUTES ====================
 
+// Root route - Health check
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Inventory Management API is running!',
+    status: 'OK',
+    endpoints: {
+      products: '/api/products',
+      search: '/api/products/search',
+      categories: '/api/products/categories',
+      import: '/api/products/import',
+      export: '/api/products/export'
+    }
+  });
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
 // GET /api/products - Get all products with pagination and sorting
 app.get('/api/products', (req, res) => {
   const { page = 1, limit = 100, sort = 'id', order = 'asc', category } = req.query;
