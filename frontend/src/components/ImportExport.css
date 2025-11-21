@@ -1,0 +1,57 @@
+.import-export-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-import {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-import:hover:not(:disabled) {
+  background-color: #138496;
+}
+
+.btn-export {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.btn-export:hover:not(:disabled) {
+  background-color: #5a32a3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .import-export-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
